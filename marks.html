@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marks - Attendance Management System</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f8f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    
+    .navbar {
+        background-color: #0b3866;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+    }
+
+    .logo {
+        height: 50px;
+        margin-right: 15px;
+    }
+
+    .navbar h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 22px;
+    }
+
+    .nav-links a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #1abc9c;
+    }
+
+    .logout {
+        background-color: #e74c3c;
+        padding: 8px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: white;
+    }
+
+    .welcome {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .welcome span {
+        font-size: 14px;
+        color: #fff;
+    }
+
+    .profile-pic {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: 2px solid white;
+    }
+
+    header {
+      color: black;
+      font-size: 20px;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .summary {
+      background-color: #e8f5e9;
+      padding: 1rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .marks-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    .marks-table th, .marks-table td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      text-align: center;
+    }
+    .marks-table th {
+      background-color: #dcedc8;
+    }
+    .filter {
+      margin-bottom: 1rem;
+      font-size: 20px;
+    }
+    .remarks {
+      margin-top: 2rem;
+      background-color: #fffde7;
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <img src="logo.jfif" alt="College Logo" class="logo">
+    <h2>SRKR Engineering College</h2>
+    <div class="nav-links">
+        <a href="marks.html">Marks</a>
+        <a href="assignments.html">Assignments</a>
+        <a href="notices.html">Notices</a>
+        <a href="login.html" class="logout">Logout</a>
+    </div>
+    <div class="welcome">
+        <span>WELCOME</span>
+        <img src="profile.jpg" alt="Profile" class="profile-pic">
+    </div>
+</div>
+<header>
+    <h2>Marks Overview</h2>
+  </header>
+  <div class="container">
+    <div class="filter">
+      <label for="exam-select">Select Exam/Semester:</label>
+      <select id="exam-select">
+        <option value="sem1">Semester 1</option>
+        <option value="sem2">Semester 2</option>
+        <option value="midterm">Midterm Exams</option>
+      </select>
+    </div>
+
+    <div class="summary">
+      <h3>Overall Performance</h3>
+      <p>Total Marks: 480 / 600</p>
+      <p>GPA: 8.2</p>
+    </div>
+
+    <table class="marks-table">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Internal Marks</th>
+          <th>External Marks</th>
+          <th>Total</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Math</td><td>45</td><td>75</td><td>120</td><td>A</td></tr>
+        <tr><td>Physics</td><td>40</td><td>70</td><td>110</td><td>B+</td></tr>
+        <tr><td>Chemistry</td><td>42</td><td>72</td><td>114</td><td>A</td></tr>
+        <tr><td>English</td><td>38</td><td>65</td><td>103</td><td>B</td></tr>
+        <tr><td>C Language</td><td>46</td><td>78</td><td>124</td><td>A+</td></tr>
+      </tbody>
+    </table>
+
+    <canvas id="marksChart" width="600" height="300"></canvas>
+
+    <div class="remarks">
+      <h4>Teacher's Remarks</h4>
+      <p>Keep up the good work in C Language. Improve written skills in English.</p>
+    </div>
+  </div>
+
+
+  <script>
+    const ctx = document.getElementById('marksChart');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Math', 'Physics', 'Chemistry', 'English', 'C language'],
+        datasets: [{
+          label: 'Total Marks',
+          data: [120, 110, 114, 103, 124],
+          backgroundColor: '#66bb6a'
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 150
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

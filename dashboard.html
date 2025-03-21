@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #003366;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px gray;
+            border-radius: 10px;
+        }
+        .attendance {
+            font-size: 18px;
+            color: green;
+            text-align: center;
+            font-size: 30px;
+        }
+        .links a {
+            display: block;
+            margin: 5px 0;
+            color: blue;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #003366;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="stylel.css">
+
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo.jfif" alt="College Logo" class="logo">
+        <h2>SRKR Engineering College</h2>
+        <div class="nav-links">
+            <a href="marks.html">Marks</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="notices.html">Notices</a>
+            <a href="login.html" class="logout">Logout</a>
+        </div>
+        <div class="welcome">
+            <span>WELCOME</span>
+            <img src="profile.jpg" alt="Profile" class="profile-pic">
+        </div>
+    </div>
+    <div class="container">
+        <p class="attendance">Your Latest Attendance is: <strong>77.78%</strong> </p>
+        <p style="text-align: center;">(ALERT: You have adequate attendance. Improve further)</p>
+        
+        <div class="links">
+            <a href="#">Click Here to Pay College/Transport/Hostel Fees Online</a>
+            <a href="#">Click Here to Pay Condonation Fees Online</a>
+            <a href="#">Click Here to Pay Regular Exam Fees Online (JNTU)</a>
+            <a href="#">Click Here to Pay Regular Exam Fees Online</a>
+            <a href="#">Click Here to Pay Supply Exam Fees Online</a>
+            <a href="#">Click Here to Pay Revaluation Exam Fees Online</a>
+            <a href="#">Click Here to Go for Regular/Supply Fee Receipts</a>
+        </div>
+        
+        <h3>Subject Wise Attendance</h3>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>SlNo</th>
+                    <th>Subject</th>
+                    <th>Faculty</th>
+                    <th>Classes Held</th>
+                    <th>Classes Attended</th>
+                    <th>Att %</th>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>Total</td>
+                    <td>-</td>
+                    <td>414</td>
+                    <td>322</td>
+                    <td>77.78%</td>
+                </tr>
+            </table>
+        </div>
+        
+        <h3>Date Wise Attendance</h3>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Day Name</th>
+                    <th>1 (09:00-09:45)</th>
+                    <th>2 (09:45-10:30)</th>
+                    <th>3 (10:30-11:15)</th>
+                    <th>4 (11:15-12:00)</th>
+                    <th>5 (01:30-02:15)</th>
+                    <th>6 (02:15-03:00)</th>
+                    <th>7 (03:00-03:45)</th>
+                    <th>8 (03:45-04:30)</th>
+                </tr>
+                <tr>
+                    <td>Day-1</td>
+                    <td>P</td>
+                    <td>A</td>
+                    <td>P</td>
+                    <td>P</td>
+                    <td>A</td>
+                    <td>P</td>
+                    <td>P</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>Day-2</td>
+                    <td>A</td>
+                    <td>A</td>
+                    <td>P</td>
+                    <td>P</td>
+                    <td>A</td>
+                    <td>P</td>
+                    <td>P</td>
+                    <td>A</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
